@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectHub - Join Our Community</title>
+    <meta name="description" content="Join ConnectHub - The social network for professionals and creatives">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">Join ConnectHub</h1>
+            <p class="header__subtitle">Connect with professionals worldwide</p>
+        </header>
+
+        <main class="main-content">
+            <form class="registration-form" id="registrationForm" novalidate>
+                <section class="form-section">
+                    <h2 class="form-section__title">Personal Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" class="form-input" required>
+                        <span class="error-message" id="firstNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName" class="form-label">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" class="form-input" required>
+                        <span class="error-message" id="lastNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" pattern="[0-9]{10}">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2 class="form-section__title">Account Security</h2>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password *</label>
+                        <input type="password" id="password" name="password" class="form-input" required minlength="8">
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar"></div>
+                            <span class="strength-text">Password strength</span>
+                        </div>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2 class="form-section__title">Professional Profile</h2>
+                    
+                    <div class="form-group">
+                        <label for="profession" class="form-label">Profession</label>
+                        <select id="profession" name="profession" class="form-select">
+                            <option value="">Select your profession</option>
+                            <option value="developer">Software Developer</option>
+                            <option value="designer">Designer</option>
+                            <option value="manager">Project Manager</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="student">Student</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience" class="form-label">Years of Experience</label>
+                        <input type="range" id="experience" name="experience" class="form-range" min="0" max="20" value="0">
+                        <output for="experience" class="range-output" id="experienceOutput">0 years</output>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Interests</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="technology"> Technology
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="design"> Design
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="business"> Business
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="education"> Education
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <div class="form-group">
+                        <label class="checkbox-label terms-checkbox">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span>I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a> *</span>
+                        </label>
+                        <span class="error-message" id="termsError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span>Subscribe to our newsletter for updates</span>
+                        </label>
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn--primary" id="submitBtn">Create Account</button>
+                    <button type="reset" class="btn btn--secondary">Clear Form</button>
+                </div>
+            </form>
+
+            <div class="success-message" id="successMessage" hidden>
+                <div class="success-icon">✓</div>
+                <h2>Welcome to ConnectHub!</h2>
+                <p>Your account has been created successfully. Check your email to verify your account.</p>
+                <button class="btn btn--primary" onclick="resetForm()">Create Another Account</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 ConnectHub. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="scripts/form-validation.js"></script>
+</body>
+</html>
